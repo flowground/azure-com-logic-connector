@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "integrationAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "mapName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The callback url parameters.",
+            "properties": {
+                "keyType": {
+                    "description": "The key type.",
+                    "enum": [
+                        "NotSpecified",
+                        "Primary",
+                        "Secondary"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "KeyType"
+                    }
+                },
+                "notAfter": {
+                    "description": "The expiry time.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

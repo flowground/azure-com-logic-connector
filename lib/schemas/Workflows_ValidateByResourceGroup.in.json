@@ -1,0 +1,249 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "workflowName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "The base resource type.",
+                    "properties": {
+                        "id": {
+                            "description": "The resource id.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "The resource location.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Gets the resource name.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "description": "The resource tags.",
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Gets the resource type.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "The workflow type.",
+            "properties": {
+                "properties": {
+                    "description": "The workflow properties.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "accessEndpoint": {
+                            "description": "Gets the access endpoint.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "changedTime": {
+                            "description": "Gets the changed time.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "createdTime": {
+                            "description": "Gets the created time.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "definition": {
+                            "description": "The definition.",
+                            "properties": {},
+                            "type": "object"
+                        },
+                        "integrationAccount": {
+                            "description": "The integration account.",
+                            "properties": {
+                                "id": {
+                                    "description": "The resource id.",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Gets the resource name.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "description": "Gets the resource type.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "parameters": {
+                            "additionalProperties": {
+                                "description": "The workflow parameters.",
+                                "properties": {
+                                    "description": {
+                                        "description": "The description.",
+                                        "type": "string"
+                                    },
+                                    "metadata": {
+                                        "description": "The metadata.",
+                                        "properties": {},
+                                        "type": "object"
+                                    },
+                                    "type": {
+                                        "description": "The type.",
+                                        "enum": [
+                                            "NotSpecified",
+                                            "String",
+                                            "SecureString",
+                                            "Int",
+                                            "Float",
+                                            "Bool",
+                                            "Array",
+                                            "Object",
+                                            "SecureObject"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "ParameterType"
+                                        }
+                                    },
+                                    "value": {
+                                        "description": "The value.",
+                                        "properties": {},
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "description": "The parameters.",
+                            "type": "object"
+                        },
+                        "provisioningState": {
+                            "description": "Gets the provisioning state.",
+                            "readOnly": true,
+                            "enum": [
+                                "NotSpecified",
+                                "Accepted",
+                                "Running",
+                                "Ready",
+                                "Creating",
+                                "Created",
+                                "Deleting",
+                                "Deleted",
+                                "Canceled",
+                                "Failed",
+                                "Succeeded",
+                                "Moving",
+                                "Updating",
+                                "Registering",
+                                "Registered",
+                                "Unregistering",
+                                "Unregistered",
+                                "Completed"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "WorkflowProvisioningState"
+                            }
+                        },
+                        "sku": {
+                            "description": "The sku.",
+                            "properties": {
+                                "name": {
+                                    "description": "The name.",
+                                    "enum": [
+                                        "NotSpecified",
+                                        "Free",
+                                        "Shared",
+                                        "Basic",
+                                        "Standard",
+                                        "Premium"
+                                    ],
+                                    "type": "string",
+                                    "x-ms-enum": {
+                                        "modelAsString": true,
+                                        "name": "SkuName"
+                                    }
+                                },
+                                "plan": {
+                                    "description": "The reference to plan.",
+                                    "properties": {
+                                        "id": {
+                                            "description": "The resource id.",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Gets the resource name.",
+                                            "readOnly": true,
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "description": "Gets the resource type.",
+                                            "readOnly": true,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "name"
+                            ],
+                            "type": "object"
+                        },
+                        "state": {
+                            "description": "The state.",
+                            "enum": [
+                                "NotSpecified",
+                                "Completed",
+                                "Enabled",
+                                "Disabled",
+                                "Deleted",
+                                "Suspended"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "WorkflowState"
+                            }
+                        },
+                        "version": {
+                            "description": "Gets the version.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

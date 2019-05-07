@@ -1,0 +1,310 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "workflowName": {
+            "required": true,
+            "type": "string"
+        },
+        "triggerName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "additionalProperties": false,
+            "properties": {
+                "source": {
+                    "allOf": [
+                        {
+                            "description": "The sub resource type.",
+                            "properties": {
+                                "id": {
+                                    "description": "The resource id.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                }
+                            },
+                            "x-ms-azure-resource": true,
+                            "type": "object"
+                        }
+                    ],
+                    "description": "The workflow trigger.",
+                    "properties": {
+                        "name": {
+                            "description": "Gets the workflow trigger name.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "properties": {
+                            "description": "The workflow trigger properties.",
+                            "x-ms-client-flatten": true,
+                            "properties": {
+                                "changedTime": {
+                                    "description": "Gets the changed time.",
+                                    "format": "date-time",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "createdTime": {
+                                    "description": "Gets the created time.",
+                                    "format": "date-time",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "lastExecutionTime": {
+                                    "description": "Gets the last execution time.",
+                                    "format": "date-time",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "nextExecutionTime": {
+                                    "description": "Gets the next execution time.",
+                                    "format": "date-time",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "provisioningState": {
+                                    "description": "Gets the provisioning state.",
+                                    "readOnly": true,
+                                    "enum": [
+                                        "NotSpecified",
+                                        "Accepted",
+                                        "Running",
+                                        "Ready",
+                                        "Creating",
+                                        "Created",
+                                        "Deleting",
+                                        "Deleted",
+                                        "Canceled",
+                                        "Failed",
+                                        "Succeeded",
+                                        "Moving",
+                                        "Updating",
+                                        "Registering",
+                                        "Registered",
+                                        "Unregistering",
+                                        "Unregistered",
+                                        "Completed"
+                                    ],
+                                    "type": "string",
+                                    "x-ms-enum": {
+                                        "modelAsString": true,
+                                        "name": "WorkflowTriggerProvisioningState"
+                                    }
+                                },
+                                "recurrence": {
+                                    "description": "Gets the workflow trigger recurrence.",
+                                    "readOnly": true,
+                                    "properties": {
+                                        "endTime": {
+                                            "description": "The end time.",
+                                            "type": "string"
+                                        },
+                                        "frequency": {
+                                            "description": "The frequency.",
+                                            "enum": [
+                                                "NotSpecified",
+                                                "Second",
+                                                "Minute",
+                                                "Hour",
+                                                "Day",
+                                                "Week",
+                                                "Month",
+                                                "Year"
+                                            ],
+                                            "type": "string",
+                                            "x-ms-enum": {
+                                                "modelAsString": true,
+                                                "name": "RecurrenceFrequency"
+                                            }
+                                        },
+                                        "interval": {
+                                            "description": "The interval.",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        },
+                                        "schedule": {
+                                            "description": "The recurrence schedule.",
+                                            "properties": {
+                                                "hours": {
+                                                    "description": "The hours.",
+                                                    "items": {
+                                                        "format": "int32",
+                                                        "type": "integer"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "minutes": {
+                                                    "description": "The minutes.",
+                                                    "items": {
+                                                        "format": "int32",
+                                                        "type": "integer"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "monthDays": {
+                                                    "description": "The month days.",
+                                                    "items": {
+                                                        "format": "int32",
+                                                        "type": "integer"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "monthlyOccurrences": {
+                                                    "description": "The monthly occurrences.",
+                                                    "items": {
+                                                        "description": "The recurrence schedule occurrence.",
+                                                        "properties": {
+                                                            "day": {
+                                                                "description": "The day of the week.",
+                                                                "enum": [
+                                                                    "Sunday",
+                                                                    "Monday",
+                                                                    "Tuesday",
+                                                                    "Wednesday",
+                                                                    "Thursday",
+                                                                    "Friday",
+                                                                    "Saturday"
+                                                                ],
+                                                                "type": "string",
+                                                                "x-ms-enum": {
+                                                                    "modelAsString": false,
+                                                                    "name": "DayOfWeek"
+                                                                }
+                                                            },
+                                                            "occurrence": {
+                                                                "description": "The occurrence.",
+                                                                "format": "int32",
+                                                                "type": "integer"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "weekDays": {
+                                                    "description": "The days of the week.",
+                                                    "items": {
+                                                        "enum": [
+                                                            "Sunday",
+                                                            "Monday",
+                                                            "Tuesday",
+                                                            "Wednesday",
+                                                            "Thursday",
+                                                            "Friday",
+                                                            "Saturday"
+                                                        ],
+                                                        "type": "string",
+                                                        "x-ms-enum": {
+                                                            "modelAsString": false,
+                                                            "name": "DaysOfWeek"
+                                                        }
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "startTime": {
+                                            "description": "The start time.",
+                                            "type": "string"
+                                        },
+                                        "timeZone": {
+                                            "description": "The time zone.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "state": {
+                                    "description": "Gets the state.",
+                                    "readOnly": true,
+                                    "enum": [
+                                        "NotSpecified",
+                                        "Completed",
+                                        "Enabled",
+                                        "Disabled",
+                                        "Deleted",
+                                        "Suspended"
+                                    ],
+                                    "type": "string",
+                                    "x-ms-enum": {
+                                        "modelAsString": true,
+                                        "name": "WorkflowState"
+                                    }
+                                },
+                                "status": {
+                                    "description": "Gets the status.",
+                                    "readOnly": true,
+                                    "enum": [
+                                        "NotSpecified",
+                                        "Paused",
+                                        "Running",
+                                        "Waiting",
+                                        "Succeeded",
+                                        "Skipped",
+                                        "Suspended",
+                                        "Cancelled",
+                                        "Failed",
+                                        "Faulted",
+                                        "TimedOut",
+                                        "Aborted",
+                                        "Ignored"
+                                    ],
+                                    "type": "string",
+                                    "x-ms-enum": {
+                                        "modelAsString": true,
+                                        "name": "WorkflowStatus"
+                                    }
+                                },
+                                "workflow": {
+                                    "description": "Gets the reference to workflow.",
+                                    "readOnly": true,
+                                    "properties": {
+                                        "id": {
+                                            "description": "The resource id.",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Gets the resource name.",
+                                            "readOnly": true,
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "description": "Gets the resource type.",
+                                            "readOnly": true,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Gets the workflow trigger type.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "source"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,143 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "integrationAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "partnerName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "The base resource type.",
+                    "properties": {
+                        "id": {
+                            "description": "The resource id.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "The resource location.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Gets the resource name.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "description": "The resource tags.",
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Gets the resource type.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "The integration account partner.",
+            "properties": {
+                "properties": {
+                    "description": "The integration account partner properties.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "changedTime": {
+                            "description": "The changed time.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "content": {
+                            "description": "The partner content.",
+                            "properties": {
+                                "b2b": {
+                                    "description": "The B2B partner content.",
+                                    "properties": {
+                                        "businessIdentities": {
+                                            "description": "The list of partner business identities.",
+                                            "items": {
+                                                "description": "The integration account partner's business identity.",
+                                                "properties": {
+                                                    "qualifier": {
+                                                        "description": "The business identity qualifier e.g. as2identity, ZZ, ZZZ, 31, 32",
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "description": "The user defined business identity value.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "qualifier",
+                                                    "value"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "createdTime": {
+                            "description": "The created time.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "metadata": {
+                            "description": "The metadata.",
+                            "properties": {},
+                            "type": "object"
+                        },
+                        "partnerType": {
+                            "description": "The partner type.",
+                            "enum": [
+                                "NotSpecified",
+                                "B2B"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "PartnerType"
+                            }
+                        }
+                    },
+                    "required": [
+                        "partnerType",
+                        "content"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

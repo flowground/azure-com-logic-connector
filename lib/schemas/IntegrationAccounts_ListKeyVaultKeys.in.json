@@ -1,0 +1,68 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "integrationAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "additionalProperties": false,
+            "description": "The list key vault keys definition.",
+            "properties": {
+                "keyVault": {
+                    "description": "The key vault reference.",
+                    "additionalProperties": false,
+                    "allOf": [
+                        {
+                            "description": "The resource reference.",
+                            "properties": {
+                                "id": {
+                                    "description": "The resource id.",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Gets the resource name.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "description": "Gets the resource type.",
+                                    "readOnly": true,
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    ],
+                    "properties": {
+                        "name": {
+                            "description": "The key vault name.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "skipToken": {
+                    "description": "The skip token.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keyVault"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

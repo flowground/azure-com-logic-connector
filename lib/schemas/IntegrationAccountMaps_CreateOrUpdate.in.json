@@ -1,0 +1,169 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "integrationAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "mapName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "The base resource type.",
+                    "properties": {
+                        "id": {
+                            "description": "The resource id.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "The resource location.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Gets the resource name.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "description": "The resource tags.",
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Gets the resource type.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "The integration account map.",
+            "properties": {
+                "properties": {
+                    "description": "The integration account map properties.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "changedTime": {
+                            "description": "The changed time.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "content": {
+                            "description": "The content.",
+                            "properties": {},
+                            "type": "string"
+                        },
+                        "contentLink": {
+                            "description": "The content link.",
+                            "readOnly": true,
+                            "properties": {
+                                "contentHash": {
+                                    "description": "The content hash.",
+                                    "properties": {
+                                        "algorithm": {
+                                            "description": "The algorithm of the content hash.",
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "description": "The value of the content hash.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "contentSize": {
+                                    "description": "The content size.",
+                                    "format": "int64",
+                                    "type": "integer"
+                                },
+                                "contentVersion": {
+                                    "description": "The content version.",
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "description": "The metadata.",
+                                    "properties": {},
+                                    "type": "object"
+                                },
+                                "uri": {
+                                    "description": "The content link URI.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "contentType": {
+                            "description": "The content type.",
+                            "type": "string"
+                        },
+                        "createdTime": {
+                            "description": "The created time.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "mapType": {
+                            "description": "The map type.",
+                            "enum": [
+                                "NotSpecified",
+                                "Xslt",
+                                "Xslt20",
+                                "Xslt30",
+                                "Liquid"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "MapType"
+                            }
+                        },
+                        "metadata": {
+                            "description": "The metadata.",
+                            "properties": {},
+                            "type": "object"
+                        },
+                        "parametersSchema": {
+                            "description": "The parameters schema of integration account map.",
+                            "properties": {
+                                "ref": {
+                                    "description": "The reference name.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "mapType"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

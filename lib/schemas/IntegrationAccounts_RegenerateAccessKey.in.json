@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "integrationAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The access key regenerate action content.",
+            "properties": {
+                "keyType": {
+                    "description": "The key type.",
+                    "enum": [
+                        "NotSpecified",
+                        "Primary",
+                        "Secondary"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "KeyType"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "integrationAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "additionalProperties": false,
+            "properties": {
+                "events": {
+                    "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                            "error": {
+                                "additionalProperties": false,
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "eventLevel": {
+                                "description": "The event level.",
+                                "enum": [
+                                    "LogAlways",
+                                    "Critical",
+                                    "Error",
+                                    "Warning",
+                                    "Informational",
+                                    "Verbose"
+                                ],
+                                "type": "string",
+                                "x-ms-enum": {
+                                    "modelAsString": false,
+                                    "name": "EventLevel"
+                                }
+                            },
+                            "eventTime": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "recordType": {
+                                "description": "The tracking record type.",
+                                "enum": [
+                                    "NotSpecified",
+                                    "Custom",
+                                    "AS2Message",
+                                    "AS2MDN",
+                                    "X12Interchange",
+                                    "X12FunctionalGroup",
+                                    "X12TransactionSet",
+                                    "X12InterchangeAcknowledgment",
+                                    "X12FunctionalGroupAcknowledgment",
+                                    "X12TransactionSetAcknowledgment",
+                                    "EdifactInterchange",
+                                    "EdifactFunctionalGroup",
+                                    "EdifactTransactionSet",
+                                    "EdifactInterchangeAcknowledgment",
+                                    "EdifactFunctionalGroupAcknowledgment",
+                                    "EdifactTransactionSetAcknowledgment"
+                                ],
+                                "type": "string",
+                                "x-ms-enum": {
+                                    "modelAsString": true,
+                                    "name": "TrackingRecordType"
+                                }
+                            }
+                        },
+                        "required": [
+                            "eventLevel",
+                            "eventTime",
+                            "recordType"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "sourceType": {
+                    "type": "string"
+                },
+                "trackEventsOptions": {
+                    "description": "The track events operation options.",
+                    "enum": [
+                        "None",
+                        "DisableSourceInfoEnrich"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "TrackEventsOperationOptions"
+                    }
+                }
+            },
+            "required": [
+                "sourceType",
+                "events"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

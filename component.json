@@ -1,0 +1,1614 @@
+{
+    "title": "LogicManagementClient",
+    "description": "REST API for Azure Logic Apps.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/logic/2018-07-01-preview/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "azure_auth": {
+                "label": "Azure Active Directory OAuth2 Flow.",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://login.microsoftonline.com/common/oauth2/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Operations_List": {
+            "main": "./lib/actions/Operations_List.js",
+            "title": "Lists all of the available Logic REST API operations.",
+            "description": "Lists all of the available Logic REST API operations.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operations_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_ListBySubscription": {
+            "main": "./lib/actions/IntegrationAccounts_ListBySubscription.js",
+            "title": "Gets a list of integration accounts by subscription.",
+            "description": "Gets a list of integration accounts by subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_ListBySubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_ListBySubscription": {
+            "main": "./lib/actions/Workflows_ListBySubscription.js",
+            "title": "Gets a list of workflows by subscription.",
+            "description": "Gets a list of workflows by subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_ListBySubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_ListByResourceGroup": {
+            "main": "./lib/actions/IntegrationAccounts_ListByResourceGroup.js",
+            "title": "Gets a list of integration accounts by resource group.",
+            "description": "Gets a list of integration accounts by resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_Delete": {
+            "main": "./lib/actions/IntegrationAccounts_Delete.js",
+            "title": "Deletes an integration account.",
+            "description": "Deletes an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_Get": {
+            "main": "./lib/actions/IntegrationAccounts_Get.js",
+            "title": "Gets an integration account.",
+            "description": "Gets an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_Update": {
+            "main": "./lib/actions/IntegrationAccounts_Update.js",
+            "title": "Updates an integration account.",
+            "description": "Updates an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_Update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccounts_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account.",
+            "description": "Creates or updates an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAgreements_List": {
+            "main": "./lib/actions/IntegrationAccountAgreements_List.js",
+            "title": "Gets a list of integration account agreements.",
+            "description": "Gets a list of integration account agreements.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAgreements_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAgreements_Delete": {
+            "main": "./lib/actions/IntegrationAccountAgreements_Delete.js",
+            "title": "Deletes an integration account agreement.",
+            "description": "Deletes an integration account agreement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAgreements_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAgreements_Get": {
+            "main": "./lib/actions/IntegrationAccountAgreements_Get.js",
+            "title": "Gets an integration account agreement.",
+            "description": "Gets an integration account agreement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAgreements_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAgreements_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountAgreements_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account agreement.",
+            "description": "Creates or updates an integration account agreement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAgreements_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAgreements_ListContentCallbackUrl": {
+            "main": "./lib/actions/IntegrationAccountAgreements_ListContentCallbackUrl.js",
+            "title": "Get the content callback url.",
+            "description": "Get the content callback url.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAgreements_ListContentCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAssemblies_List": {
+            "main": "./lib/actions/IntegrationAccountAssemblies_List.js",
+            "title": "List the assemblies for an integration account.",
+            "description": "List the assemblies for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAssemblies_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAssemblies_Delete": {
+            "main": "./lib/actions/IntegrationAccountAssemblies_Delete.js",
+            "title": "Delete an assembly for an integration account.",
+            "description": "Delete an assembly for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAssemblies_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAssemblies_Get": {
+            "main": "./lib/actions/IntegrationAccountAssemblies_Get.js",
+            "title": "Get an assembly for an integration account.",
+            "description": "Get an assembly for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAssemblies_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAssemblies_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountAssemblies_CreateOrUpdate.js",
+            "title": "Create or update an assembly for an integration account.",
+            "description": "Create or update an assembly for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAssemblies_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountAssemblies_ListContentCallbackUrl": {
+            "main": "./lib/actions/IntegrationAccountAssemblies_ListContentCallbackUrl.js",
+            "title": "Get the content callback url for an integration account assembly.",
+            "description": "Get the content callback url for an integration account assembly.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountAssemblies_ListContentCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountBatchConfigurations_List": {
+            "main": "./lib/actions/IntegrationAccountBatchConfigurations_List.js",
+            "title": "List the batch configurations for an integration account.",
+            "description": "List the batch configurations for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountBatchConfigurations_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountBatchConfigurations_Delete": {
+            "main": "./lib/actions/IntegrationAccountBatchConfigurations_Delete.js",
+            "title": "Delete a batch configuration for an integration account.",
+            "description": "Delete a batch configuration for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountBatchConfigurations_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountBatchConfigurations_Get": {
+            "main": "./lib/actions/IntegrationAccountBatchConfigurations_Get.js",
+            "title": "Get a batch configuration for an integration account.",
+            "description": "Get a batch configuration for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountBatchConfigurations_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountBatchConfigurations_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountBatchConfigurations_CreateOrUpdate.js",
+            "title": "Create or update a batch configuration for an integration account.",
+            "description": "Create or update a batch configuration for an integration account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountBatchConfigurations_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountCertificates_List": {
+            "main": "./lib/actions/IntegrationAccountCertificates_List.js",
+            "title": "Gets a list of integration account certificates.",
+            "description": "Gets a list of integration account certificates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountCertificates_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountCertificates_Delete": {
+            "main": "./lib/actions/IntegrationAccountCertificates_Delete.js",
+            "title": "Deletes an integration account certificate.",
+            "description": "Deletes an integration account certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountCertificates_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountCertificates_Get": {
+            "main": "./lib/actions/IntegrationAccountCertificates_Get.js",
+            "title": "Gets an integration account certificate.",
+            "description": "Gets an integration account certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountCertificates_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountCertificates_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountCertificates_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account certificate.",
+            "description": "Creates or updates an integration account certificate.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountCertificates_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_ListCallbackUrl": {
+            "main": "./lib/actions/IntegrationAccounts_ListCallbackUrl.js",
+            "title": "Gets the integration account callback URL.",
+            "description": "Gets the integration account callback URL.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_ListCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_ListKeyVaultKeys": {
+            "main": "./lib/actions/IntegrationAccounts_ListKeyVaultKeys.js",
+            "title": "Gets the integration account's Key Vault keys.",
+            "description": "Gets the integration account's Key Vault keys.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_ListKeyVaultKeys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_LogTrackingEvents": {
+            "main": "./lib/actions/IntegrationAccounts_LogTrackingEvents.js",
+            "title": "Logs the integration account's tracking events.",
+            "description": "Logs the integration account's tracking events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_LogTrackingEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountMaps_List": {
+            "main": "./lib/actions/IntegrationAccountMaps_List.js",
+            "title": "Gets a list of integration account maps.",
+            "description": "Gets a list of integration account maps.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountMaps_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountMaps_Delete": {
+            "main": "./lib/actions/IntegrationAccountMaps_Delete.js",
+            "title": "Deletes an integration account map.",
+            "description": "Deletes an integration account map.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountMaps_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountMaps_Get": {
+            "main": "./lib/actions/IntegrationAccountMaps_Get.js",
+            "title": "Gets an integration account map.",
+            "description": "Gets an integration account map.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountMaps_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountMaps_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountMaps_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account map.",
+            "description": "Creates or updates an integration account map.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountMaps_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountMaps_ListContentCallbackUrl": {
+            "main": "./lib/actions/IntegrationAccountMaps_ListContentCallbackUrl.js",
+            "title": "Get the content callback url.",
+            "description": "Get the content callback url.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountMaps_ListContentCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountPartners_List": {
+            "main": "./lib/actions/IntegrationAccountPartners_List.js",
+            "title": "Gets a list of integration account partners.",
+            "description": "Gets a list of integration account partners.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountPartners_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountPartners_Delete": {
+            "main": "./lib/actions/IntegrationAccountPartners_Delete.js",
+            "title": "Deletes an integration account partner.",
+            "description": "Deletes an integration account partner.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountPartners_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountPartners_Get": {
+            "main": "./lib/actions/IntegrationAccountPartners_Get.js",
+            "title": "Gets an integration account partner.",
+            "description": "Gets an integration account partner.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountPartners_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountPartners_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountPartners_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account partner.",
+            "description": "Creates or updates an integration account partner.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountPartners_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountPartners_ListContentCallbackUrl": {
+            "main": "./lib/actions/IntegrationAccountPartners_ListContentCallbackUrl.js",
+            "title": "Get the content callback url.",
+            "description": "Get the content callback url.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountPartners_ListContentCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccounts_RegenerateAccessKey": {
+            "main": "./lib/actions/IntegrationAccounts_RegenerateAccessKey.js",
+            "title": "Regenerates the integration account access key.",
+            "description": "Regenerates the integration account access key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccounts_RegenerateAccessKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSchemas_List": {
+            "main": "./lib/actions/IntegrationAccountSchemas_List.js",
+            "title": "Gets a list of integration account schemas.",
+            "description": "Gets a list of integration account schemas.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSchemas_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSchemas_Delete": {
+            "main": "./lib/actions/IntegrationAccountSchemas_Delete.js",
+            "title": "Deletes an integration account schema.",
+            "description": "Deletes an integration account schema.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSchemas_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSchemas_Get": {
+            "main": "./lib/actions/IntegrationAccountSchemas_Get.js",
+            "title": "Gets an integration account schema.",
+            "description": "Gets an integration account schema.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSchemas_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSchemas_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountSchemas_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account schema.",
+            "description": "Creates or updates an integration account schema.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSchemas_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSchemas_ListContentCallbackUrl": {
+            "main": "./lib/actions/IntegrationAccountSchemas_ListContentCallbackUrl.js",
+            "title": "Get the content callback url.",
+            "description": "Get the content callback url.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSchemas_ListContentCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSessions_List": {
+            "main": "./lib/actions/IntegrationAccountSessions_List.js",
+            "title": "Gets a list of integration account sessions.",
+            "description": "Gets a list of integration account sessions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSessions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSessions_Delete": {
+            "main": "./lib/actions/IntegrationAccountSessions_Delete.js",
+            "title": "Deletes an integration account session.",
+            "description": "Deletes an integration account session.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSessions_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSessions_Get": {
+            "main": "./lib/actions/IntegrationAccountSessions_Get.js",
+            "title": "Gets an integration account session.",
+            "description": "Gets an integration account session.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSessions_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IntegrationAccountSessions_CreateOrUpdate": {
+            "main": "./lib/actions/IntegrationAccountSessions_CreateOrUpdate.js",
+            "title": "Creates or updates an integration account session.",
+            "description": "Creates or updates an integration account session.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IntegrationAccountSessions_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_ValidateByLocation": {
+            "main": "./lib/actions/Workflows_ValidateByLocation.js",
+            "title": "Validates the workflow definition.",
+            "description": "Validates the workflow definition.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_ValidateByLocation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_ListByResourceGroup": {
+            "main": "./lib/actions/Workflows_ListByResourceGroup.js",
+            "title": "Gets a list of workflows by resource group.",
+            "description": "Gets a list of workflows by resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_Delete": {
+            "main": "./lib/actions/Workflows_Delete.js",
+            "title": "Deletes a workflow.",
+            "description": "Deletes a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_Get": {
+            "main": "./lib/actions/Workflows_Get.js",
+            "title": "Gets a workflow.",
+            "description": "Gets a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_Update": {
+            "main": "./lib/actions/Workflows_Update.js",
+            "title": "Updates a workflow.",
+            "description": "Updates a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_Update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_CreateOrUpdate": {
+            "main": "./lib/actions/Workflows_CreateOrUpdate.js",
+            "title": "Creates or updates a workflow.",
+            "description": "Creates or updates a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_Disable": {
+            "main": "./lib/actions/Workflows_Disable.js",
+            "title": "Disables a workflow.",
+            "description": "Disables a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_Disable.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_Enable": {
+            "main": "./lib/actions/Workflows_Enable.js",
+            "title": "Enables a workflow.",
+            "description": "Enables a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_Enable.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_GenerateUpgradedDefinition": {
+            "main": "./lib/actions/Workflows_GenerateUpgradedDefinition.js",
+            "title": "Generates the upgraded definition for a workflow.",
+            "description": "Generates the upgraded definition for a workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_GenerateUpgradedDefinition.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_ListCallbackUrl": {
+            "main": "./lib/actions/Workflows_ListCallbackUrl.js",
+            "title": "Get the workflow callback Url.",
+            "description": "Get the workflow callback Url.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_ListCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_ListSwagger": {
+            "main": "./lib/actions/Workflows_ListSwagger.js",
+            "title": "Gets an OpenAPI definition for the workflow.",
+            "description": "Gets an OpenAPI definition for the workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_ListSwagger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_Move": {
+            "main": "./lib/actions/Workflows_Move.js",
+            "title": "Moves an existing workflow.",
+            "description": "Moves an existing workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_Move.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_RegenerateAccessKey": {
+            "main": "./lib/actions/Workflows_RegenerateAccessKey.js",
+            "title": "Regenerates the callback URL access key for request triggers.",
+            "description": "Regenerates the callback URL access key for request triggers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_RegenerateAccessKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRuns_List": {
+            "main": "./lib/actions/WorkflowRuns_List.js",
+            "title": "Gets a list of workflow runs.",
+            "description": "Gets a list of workflow runs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRuns_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRuns_Get": {
+            "main": "./lib/actions/WorkflowRuns_Get.js",
+            "title": "Gets a workflow run.",
+            "description": "Gets a workflow run.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRuns_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActions_List": {
+            "main": "./lib/actions/WorkflowRunActions_List.js",
+            "title": "Gets a list of workflow run actions.",
+            "description": "Gets a list of workflow run actions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActions_Get": {
+            "main": "./lib/actions/WorkflowRunActions_Get.js",
+            "title": "Gets a workflow run action.",
+            "description": "Gets a workflow run action.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActions_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActions_ListExpressionTraces": {
+            "main": "./lib/actions/WorkflowRunActions_ListExpressionTraces.js",
+            "title": "Lists a workflow run expression trace.",
+            "description": "Lists a workflow run expression trace.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActions_ListExpressionTraces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRepetitions_List": {
+            "main": "./lib/actions/WorkflowRunActionRepetitions_List.js",
+            "title": "Get all of a workflow run action repetitions.",
+            "description": "Get all of a workflow run action repetitions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRepetitions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRepetitions_Get": {
+            "main": "./lib/actions/WorkflowRunActionRepetitions_Get.js",
+            "title": "Get a workflow run action repetition.",
+            "description": "Get a workflow run action repetition.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRepetitions_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRepetitions_ListExpressionTraces": {
+            "main": "./lib/actions/WorkflowRunActionRepetitions_ListExpressionTraces.js",
+            "title": "Lists a workflow run expression trace.",
+            "description": "Lists a workflow run expression trace.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRepetitions_ListExpressionTraces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRepetitionsRequestHistories_List": {
+            "main": "./lib/actions/WorkflowRunActionRepetitionsRequestHistories_List.js",
+            "title": "List a workflow run repetition request history.",
+            "description": "List a workflow run repetition request history.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRepetitionsRequestHistories_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRepetitionsRequestHistories_Get": {
+            "main": "./lib/actions/WorkflowRunActionRepetitionsRequestHistories_Get.js",
+            "title": "Gets a workflow run repetition request history.",
+            "description": "Gets a workflow run repetition request history.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRepetitionsRequestHistories_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRequestHistories_List": {
+            "main": "./lib/actions/WorkflowRunActionRequestHistories_List.js",
+            "title": "List a workflow run request history.",
+            "description": "List a workflow run request history.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRequestHistories_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionRequestHistories_Get": {
+            "main": "./lib/actions/WorkflowRunActionRequestHistories_Get.js",
+            "title": "Gets a workflow run request history.",
+            "description": "Gets a workflow run request history.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionRequestHistories_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionScopeRepetitions_List": {
+            "main": "./lib/actions/WorkflowRunActionScopeRepetitions_List.js",
+            "title": "List the workflow run action scoped repetitions.",
+            "description": "List the workflow run action scoped repetitions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionScopeRepetitions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunActionScopeRepetitions_Get": {
+            "main": "./lib/actions/WorkflowRunActionScopeRepetitions_Get.js",
+            "title": "Get a workflow run action scoped repetition.",
+            "description": "Get a workflow run action scoped repetition.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunActionScopeRepetitions_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRuns_Cancel": {
+            "main": "./lib/actions/WorkflowRuns_Cancel.js",
+            "title": "Cancels a workflow run.",
+            "description": "Cancels a workflow run.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRuns_Cancel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowRunOperations_Get": {
+            "main": "./lib/actions/WorkflowRunOperations_Get.js",
+            "title": "Gets an operation for a run.",
+            "description": "Gets an operation for a run.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowRunOperations_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_List": {
+            "main": "./lib/actions/WorkflowTriggers_List.js",
+            "title": "Gets a list of workflow triggers.",
+            "description": "Gets a list of workflow triggers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_Get": {
+            "main": "./lib/actions/WorkflowTriggers_Get.js",
+            "title": "Gets a workflow trigger.",
+            "description": "Gets a workflow trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggerHistories_List": {
+            "main": "./lib/actions/WorkflowTriggerHistories_List.js",
+            "title": "Gets a list of workflow trigger histories.",
+            "description": "Gets a list of workflow trigger histories.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggerHistories_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggerHistories_Get": {
+            "main": "./lib/actions/WorkflowTriggerHistories_Get.js",
+            "title": "Gets a workflow trigger history.",
+            "description": "Gets a workflow trigger history.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggerHistories_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggerHistories_Resubmit": {
+            "main": "./lib/actions/WorkflowTriggerHistories_Resubmit.js",
+            "title": "Resubmits a workflow run based on the trigger history.",
+            "description": "Resubmits a workflow run based on the trigger history.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggerHistories_Resubmit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_ListCallbackUrl": {
+            "main": "./lib/actions/WorkflowTriggers_ListCallbackUrl.js",
+            "title": "Get the callback URL for a workflow trigger.",
+            "description": "Get the callback URL for a workflow trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_ListCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_Reset": {
+            "main": "./lib/actions/WorkflowTriggers_Reset.js",
+            "title": "Resets a workflow trigger.",
+            "description": "Resets a workflow trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_Reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_Run": {
+            "main": "./lib/actions/WorkflowTriggers_Run.js",
+            "title": "Runs a workflow trigger.",
+            "description": "Runs a workflow trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_Run.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_GetSchemaJson": {
+            "main": "./lib/actions/WorkflowTriggers_GetSchemaJson.js",
+            "title": "Get the trigger schema as JSON.",
+            "description": "Get the trigger schema as JSON.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_GetSchemaJson.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowTriggers_SetState": {
+            "main": "./lib/actions/WorkflowTriggers_SetState.js",
+            "title": "Sets the state of a workflow trigger.",
+            "description": "Sets the state of a workflow trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowTriggers_SetState.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workflows_ValidateByResourceGroup": {
+            "main": "./lib/actions/Workflows_ValidateByResourceGroup.js",
+            "title": "Validates the workflow.",
+            "description": "Validates the workflow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workflows_ValidateByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowVersions_List": {
+            "main": "./lib/actions/WorkflowVersions_List.js",
+            "title": "Gets a list of workflow versions.",
+            "description": "Gets a list of workflow versions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowVersions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowVersions_Get": {
+            "main": "./lib/actions/WorkflowVersions_Get.js",
+            "title": "Gets a workflow version.",
+            "description": "Gets a workflow version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowVersions_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkflowVersionTriggers_ListCallbackUrl": {
+            "main": "./lib/actions/WorkflowVersionTriggers_ListCallbackUrl.js",
+            "title": "Get the callback url for a trigger of a workflow version.",
+            "description": "Get the callback url for a trigger of a workflow version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkflowVersionTriggers_ListCallbackUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
